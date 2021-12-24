@@ -18,7 +18,7 @@ type HexoFile struct {
 
 func GetFile(url string) []HexoFile {
 	log.Info("列表：" + url)
-	if url == "" || strings.Index(url, global.Config.HexoRoot) < 0 {
+	if url == "" || strings.Index(url, global.Conf.Server.HexoRoot) < 0 {
 		panic("路径错误！")
 	}
 	var array []HexoFile
@@ -46,7 +46,7 @@ func ReadFile(url string) string {
 	var msg string
 	log.Info("读取：" + url)
 	// 验证路径
-	if url == "" || strings.Index(url, global.Config.HexoRoot) < 0 {
+	if url == "" || strings.Index(url, global.Conf.Server.HexoRoot) < 0 {
 		panic("路径错误！")
 	}
 	// 只能读取.md
@@ -72,7 +72,7 @@ func SaveFile(url, content string) string {
 	msg := "保存成功！"
 	log.Info("保存：" + url)
 	// 验证路径
-	if url == "" || strings.Index(url, global.Config.HexoRoot) < 0 {
+	if url == "" || strings.Index(url, global.Conf.Server.HexoRoot) < 0 {
 		panic("路径错误！")
 	}
 	file, err := os.OpenFile(url, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0777)
@@ -93,7 +93,7 @@ func SaveFile(url, content string) string {
 func RemoveFile(url string) string {
 	msg := "删除成功！"
 	// 验证路径
-	if url == "" || strings.Index(url, global.Config.HexoRoot) < 0 {
+	if url == "" || strings.Index(url, global.Conf.Server.HexoRoot) < 0 {
 		panic("路径错误！")
 	}
 	// 只能删除.md文件
@@ -107,7 +107,7 @@ func RemoveFile(url string) string {
 func CreateFile(url, content string) string {
 	msg := ""
 	// 验证路径
-	if url == "" || strings.Index(url, global.Config.HexoRoot) < 0 {
+	if url == "" || strings.Index(url, global.Conf.Server.HexoRoot) < 0 {
 		panic("路径错误！")
 	}
 	file, err := os.Create(url)

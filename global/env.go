@@ -4,21 +4,15 @@ import (
 	"github.com/kataras/iris/v12"
 	"github.com/mattn/go-colorable"
 	log "github.com/sirupsen/logrus"
+	"hexo_editor/entity"
 	"hexo_editor/utils"
 )
 
 // 用户
 var user map[string]string
 
-type ServerConfig struct {
-	Port     int `json:"port,omitempty"`
-	HexoRoot string `json:"hexo_root,omitempty"`
-	Username string `json:"username,omitempty"`
-	Password string `json:"password,omitempty"`
-}
-
-// Config 用于保存全局配置
-var Config ServerConfig
+// Conf 用于保存全局配置
+var Conf entity.Config
 
 func InitGlobalConfig() {
 	defer log.Info("配置加载完毕！")
@@ -26,7 +20,7 @@ func InitGlobalConfig() {
 	log.SetFormatter(&log.TextFormatter{ForceColors: true})
 	log.SetOutput(colorable.NewColorableStdout())
 	// 加载配置文件
-	utils.LoadConfig(&Config)
+	utils.LoadConfig(&Conf)
 	// 初始化用户
 	utils.InitUser()
 }
