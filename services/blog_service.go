@@ -2,7 +2,7 @@ package services
 
 import (
 	log "github.com/sirupsen/logrus"
-	"hexo_edit/global"
+	"hexo_editor/global"
 	"io/ioutil"
 	"os"
 	"strings"

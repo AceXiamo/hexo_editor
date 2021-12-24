@@ -4,7 +4,7 @@ import (
 	"github.com/kataras/iris/v12"
 	"github.com/mattn/go-colorable"
 	log "github.com/sirupsen/logrus"
-	"hexo_edit/utils"
+	"hexo_editor/utils"
 )
 
 // 用户

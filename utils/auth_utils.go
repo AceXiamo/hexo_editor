@@ -21,7 +21,7 @@ func InitUser() {
 	users = append(users, user)
 }
 
-var hashStr string = "19991107"
+var hashStr string = "xM@qfsaf*23!L^"
 
 func Auth(code string) {
 	strArr := strings.Split(code, ".")

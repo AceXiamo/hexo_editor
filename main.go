@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/kataras/iris/v12"
-	"hexo_edit/global"
-	"hexo_edit/router"
+	"hexo_editor/global"
+	"hexo_editor/router"
 	"strconv"
 )
 

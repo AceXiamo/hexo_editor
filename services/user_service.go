@@ -1,7 +1,7 @@
 package services
 
 import (
-	"hexo_edit/utils"
+	"hexo_editor/utils"
 )
 
 // Login

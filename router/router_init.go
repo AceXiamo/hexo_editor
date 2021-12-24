@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/kataras/iris/v12"
-	sys "hexo_edit/controllers"
+	sys "hexo_editor/controllers"
 )
 
 func InitRouter(app *iris.Application) {

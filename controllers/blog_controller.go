@@ -2,9 +2,9 @@ package controllers
 
 import (
 	"github.com/kataras/iris/v12"
-	"hexo_edit/global"
-	service "hexo_edit/services"
-	"hexo_edit/utils"
+	"hexo_editor/global"
+	service "hexo_editor/services"
+	"hexo_editor/utils"
 )
 
 type JsonData struct {
