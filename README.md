@@ -9,5 +9,17 @@
 - 发布说说
 - css/js配置 (因为我的博客中用到了大量的css和一部分js，所以可以配置一个全局css/js，或者单独导入部分css/js到某个博客中)
 
+### 关于启动方式
+首次运行项目会产生一个配置文件，补充完整后重新启动，再运行Vue即可
+
+### 配置文件中的内容
+`port`  后端运行端口
+
+`hexo_root`  hexo的根目录（此处用于限制可访问路径，比如说填写：'/data/hexo'，那么就只能访问/编辑该目录下的文件
+
+`username`  登陆用户名
+
+`password`  登陆密码
+
 ### 前端传送门
 🔗 [Click here](https://github.com/xm17906193/hexo_editor_vue)
