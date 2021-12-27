@@ -8,13 +8,23 @@ import (
 func InitRouter(app *iris.Application) {
 	app.Get("/login", sys.Login)
 
-
-	animeCom := app.Party("/hexo")
+	hexo := app.Party("/hexo")
 	{
-		animeCom.Get("/files", sys.Files)
-		animeCom.Get("/readFile", sys.ReadFile)
-		animeCom.Post("/saveFile", sys.SaveFile)
-		animeCom.Post("/removeFile", sys.RemoveFile)
-		animeCom.Post("/createFile", sys.CreateFile)
+		// 文件列表
+		hexo.Get("/files", sys.Files)
+		// 读取博客内容
+		hexo.Get("/readFile", sys.ReadFile)
+		// 保存博客
+		hexo.Post("/saveFile", sys.SaveFile)
+		// 删除博客
+		hexo.Post("/removeFile", sys.RemoveFile)
+		// 创建博客
+		hexo.Post("/createFile", sys.CreateFile)
+	}
+
+	cover := app.Party("/cover")
+	{
+		// 随机封面图
+		cover.Get("/get", sys.RandomImg)
 	}
 }

@@ -18,7 +18,7 @@ func LoadConfig(conf *entity.Config) []byte {
 	path := rootPath + "/conf.yml"
 	file, err := os.Open(path)
 	if err != nil {
-		GenConf(path)
+		GenConf(rootPath)
 	}
 	defer file.Close()
 	fileContent, _ := ioutil.ReadAll(file)
@@ -33,8 +33,10 @@ func LoadConfig(conf *entity.Config) []byte {
 func GenConf(path string) {
 	defer os.Exit(0)
 	log.Error("请在根目录中找到生成的配置文件，并将必要信息填写完整后重新运行！")
-	file, _ := os.Create(path)
-	file.Close()
-	fil, _ := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0777)
-	fil.Write([]byte(ConfInit))
+
+	// 配置文件
+	config, _ := os.Create(path + "/conf.yml")
+	config.Close()
+	configFile, _ := os.OpenFile(path + "/conf.yml", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0777)
+	configFile.Write([]byte(ConfInit))
 }

@@ -15,10 +15,11 @@ var user map[string]string
 var Conf entity.Config
 
 func InitGlobalConfig() {
-	defer log.Info("配置加载完毕！")
+	defer log.Info("Config Init Success！")
 	// log样式配置
 	log.SetFormatter(&log.TextFormatter{ForceColors: true})
 	log.SetOutput(colorable.NewColorableStdout())
+
 	// 加载配置文件
 	utils.LoadConfig(&Conf)
 	// 初始化用户
