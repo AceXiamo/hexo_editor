@@ -2,6 +2,14 @@
 <img src="https://xiamo.oss-accelerate.aliyuncs.com/xiamo/WordPress/2021/12/20211220154336504.png" />
 因为编辑Hexo博客的方式实在麻烦，并且后台插件不是很好看，所以决定自己写，于是也就开始了这个项目，顺便在其中学习一下Golang 
 
+### 预览
+测试博客地址： 🔗 [Click here](http://demo.hexo.xiamoqwq.com)
+
+博客管理端地址： 🔗 [Click here](http://admin.hexo.xiamoqwq.com)
+
+账号：xiamo
+密码：xiamo
+
 ### 大概会有的功能
 - 博客编辑 (一些基础功能，暂时已经完成了)
 - 表情 (这里有markdown-emoji和表情图)

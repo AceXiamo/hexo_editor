@@ -17,7 +17,7 @@ var users []User
 func InitUser(conf entity.Config) {
 	user := User{
 		UserName: conf.Server.Username,
-		PassWord: conf.Server.Username,
+		PassWord: conf.Server.Password,
 	}
 	users = append(users, user)
 }
