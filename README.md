@@ -31,3 +31,18 @@
 
 ### 前端传送门
 🔗 [Click here](https://github.com/xm17906193/hexo_editor_vue)
+
+### 我的博客
+🔗 [Click here](https://qwq.link)
+
+### 关于说说
+说说的数据来自我的另一个项目 "树" ,各位如果想要加上这么一个小模块可以到博客编辑器中自取
+
+说说在这个目录下： `/data/hexo/source/shuoshuo/`
+
+###### 数据来源
+如果你有已经完成的说说可以直接修改js代码中的接口地址
+
+如果没有的话则可以到 `https://tree.qwq.link` 中发布一条说说，然后从接口返回中取到你的userId
+
+然后copy目录下index.md再将js代码中的userId替换掉即可💦
