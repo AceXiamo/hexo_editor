@@ -24,7 +24,11 @@ func InitRouter(app *iris.Application) {
 
 	cover := app.Party("/cover")
 	{
-		// 随机封面图
+		// 随机封面图 - 返回url
 		cover.Get("/get", sys.RandomImg)
+		// 随机封面图 - 返回byte
+		cover.Get("/byte", sys.RandomImgByte)
+		// 获取所有封面图
+		cover.Get("/all", sys.AllImg)
 	}
 }
