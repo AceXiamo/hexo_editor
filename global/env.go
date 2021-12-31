@@ -23,7 +23,7 @@ func InitGlobalConfig() {
 	// 加载配置文件
 	utils.LoadConfig(&Conf)
 	// 初始化用户
-	utils.InitUser()
+	utils.InitUser(Conf)
 }
 
 func Result(ctx iris.Context, code int, msg interface{}, data interface{}) {

@@ -3,6 +3,7 @@ package utils
 import (
 	"crypto/md5"
 	"encoding/hex"
+	"hexo_editor/entity"
 	"strings"
 )
 
@@ -13,10 +14,10 @@ type User struct {
 
 var users []User
 
-func InitUser() {
+func InitUser(conf entity.Config) {
 	user := User{
-		UserName: "xiamo",
-		PassWord: "17906193.",
+		UserName: conf.Server.Username,
+		PassWord: conf.Server.Username,
 	}
 	users = append(users, user)
 }
