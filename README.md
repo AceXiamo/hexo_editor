@@ -8,7 +8,10 @@
 博客管理端地址： 🔗 [Click here](http://admin.hexo.xiamoqwq.com)
 
 账号：xiamo
+
 密码：xiamo
+
+文章根目录路径：/data/hexo/source/_posts/
 
 ### 大概会有的功能
 - 博客编辑 (一些基础功能，暂时已经完成了)
@@ -46,3 +49,4 @@
 如果没有的话则可以到 `https://tree.qwq.link` 中发布一条说说，然后从接口返回中取到你的userId
 
 然后copy目录下index.md再将js代码中的userId替换掉即可💦
+
