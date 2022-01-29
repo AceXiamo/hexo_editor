@@ -55,3 +55,7 @@ func loadImg()  {
 		}
 	}
 }
+
+func editImg(index int, url string){
+
+}

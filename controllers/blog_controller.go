@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/kataras/iris/v12"
+	log "github.com/sirupsen/logrus"
 	"hexo_editor/global"
 	service "hexo_editor/services"
 	"hexo_editor/utils"
@@ -21,6 +22,7 @@ func Files(ctx iris.Context) {
 	utils.Auth(ctx.GetHeader("Auth"))
 	var json JsonData
 	ctx.ReadQuery(&json)
+	log.Info("[" + ctx.GetHeader("X-Real-Ip") + "] 列表：" + json.Url)
 	global.Result(ctx, 200, "success", service.GetFile(json.Url))
 }
 
@@ -32,7 +34,8 @@ func ReadFile(ctx iris.Context) {
 	utils.Auth(ctx.GetHeader("Auth"))
 	var json JsonData
 	ctx.ReadQuery(&json)
-	global.Result(ctx, 200,"success",  service.ReadFile(json.Url))
+	log.Info("[" + ctx.GetHeader("X-Real-Ip") + "] 读取：" + json.Url)
+	global.Result(ctx, 200, "success", service.ReadFile(json.Url))
 }
 
 // SaveFile
@@ -43,7 +46,8 @@ func SaveFile(ctx iris.Context) {
 	utils.Auth(ctx.GetHeader("Auth"))
 	var json JsonData
 	ctx.ReadJSON(&json)
-	global.Result(ctx, 200,"success",  service.SaveFile(json.Url, json.Content))
+	log.Info("[" + ctx.GetHeader("X-Real-Ip") + "] 保存：" + json.Url)
+	global.Result(ctx, 200, "success", service.SaveFile(json.Url, json.Content))
 }
 
 // RemoveFile
@@ -54,7 +58,7 @@ func RemoveFile(ctx iris.Context) {
 	utils.Auth(ctx.GetHeader("Auth"))
 	var json JsonData
 	ctx.ReadJSON(&json)
-	global.Result(ctx, 200,"success",  service.RemoveFile(json.Url))
+	global.Result(ctx, 200, "success", service.RemoveFile(json.Url))
 }
 
 // CreateFile
@@ -65,5 +69,5 @@ func CreateFile(ctx iris.Context) {
 	utils.Auth(ctx.GetHeader("Auth"))
 	var json JsonData
 	ctx.ReadJSON(&json)
-	global.Result(ctx, 200,"success",  service.CreateFile(json.Url, json.Content))
+	global.Result(ctx, 200, "success", service.CreateFile(json.Url, json.Content))
 }

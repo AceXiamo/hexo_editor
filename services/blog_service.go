@@ -17,7 +17,6 @@ type HexoFile struct {
 }
 
 func GetFile(url string) []HexoFile {
-	log.Info("列表：" + url)
 	if url == "" || strings.Index(url, global.Conf.Server.HexoRoot) < 0 {
 		panic("路径错误！")
 	}
@@ -44,7 +43,6 @@ func GetFile(url string) []HexoFile {
 
 func ReadFile(url string) string {
 	var msg string
-	log.Info("读取：" + url)
 	// 验证路径
 	if url == "" || strings.Index(url, global.Conf.Server.HexoRoot) < 0 {
 		panic("路径错误！")
@@ -70,7 +68,6 @@ func ReadFile(url string) string {
 
 func SaveFile(url, content string) string {
 	msg := "保存成功！"
-	log.Info("保存：" + url)
 	// 验证路径
 	if url == "" || strings.Index(url, global.Conf.Server.HexoRoot) < 0 {
 		panic("路径错误！")
