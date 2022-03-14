@@ -33,7 +33,7 @@
 
 `password`  登陆密码
 
-<img src="https://alioss.xiamoqwq.com/screenshot/QQ%E6%88%AA%E5%9B%BE20220314103817.png">
+<img src="https://alioss.xiamoqwq.com/screenshot/QQ%E6%88%AA%E5%9B%BE20220314103817.png" />
 
 
 ### 前端传送门
