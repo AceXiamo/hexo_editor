@@ -13,9 +13,16 @@
 
 文章根目录路径：/data/hexo/source/_posts/
 
+### 前端传送门
+🔗 [Click here](https://github.com/xm17906193/hexo_editor_vue)
+
+### 我的博客
+🔗 [Click here](https://qwq.link)
+
+
 ### 大概会有的功能
 - 博客编辑 (一些基础功能，暂时已经完成了)
-- 插画收集 (已完成)
+- 插画收集 (pixiv插画爬取并上传至阿里云OSS)
 - 表情 (这里有markdown-emoji和表情图)
 - 内容管理 (存放一些静态资源，以及在博客中使用这些静态资源)
 - 发布说说
@@ -35,12 +42,27 @@
 
 <img src="https://alioss.xiamoqwq.com/screenshot/QQ%E6%88%AA%E5%9B%BE20220314103817.png" />
 
+### 关于插画收集
+这里我提供了两种上传方式
 
-### 前端传送门
-🔗 [Click here](https://github.com/xm17906193/hexo_editor_vue)
+#### 手动上传
+这里目前没有实现，大概就是先手动选择图片进行上传，然后补全插画作者信息，稍显麻烦 💦
 
-### 我的博客
-🔗 [Click here](https://qwq.link)
+#### Pixiv插画爬取
+<img src="https://alioss.xiamoqwq.com/screenshot/QQ截图20220314105541.png"/>
+<img src="https://alioss.xiamoqwq.com/screenshot/QQ截图20220314105553.png"/>
+根据Pixiv插画页Url爬取到插画以及作者信息，然后将插画上传至阿里云OSS，再进行保存
+
+使用该方式保存插画需要
+- 服务器不在大陆内 ( 港台/国外/能翻墙，总之就是说能够访问到Pixiv )
+- 阿里云OSS，conf.yml中关于ali的配置必须补全
+
+原本是想通过前端解决防盗链的问题，因为走后端还是偏慢了，3M的小水管有点遭不住
+
+传统的方式自然是添加meta标签，不过这种方式无效
+
+试过反向代理，依然没有效果并且直接报了404 🥲
+
 
 ### 关于说说
 说说的数据来自我的另一个项目 "树" ,各位如果想要加上这么一个小模块可以到博客编辑器中自取
