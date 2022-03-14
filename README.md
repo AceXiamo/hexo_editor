@@ -33,30 +33,7 @@
 
 `password`  登陆密码
 
-<div class="test" style="white-space: pre;background-color: #4A4453;color: black;border-radius: 4px;color: white;padding-bottom: 20px">
-    <span style="color: #AFA8BA;"># API Service</span>
-    <span style="color: deepskyblue">server:</span>
-      <span style="color: #AFA8BA;"># 后端运行端口</span>
-      <span style="color: #C1ADE3;">port:</span> 7070
-      <span style="color: #AFA8BA;"># hexo的根目录（此处用于限制可访问路径，比如说填写：'/data/hexo'，那么就只能访问/编辑该目录下的文件</span>
-      <span style="color: #C1ADE3;">hexo_root:</span> E:/work/hexo-xiamo/xiamo
-      <span style="color: #AFA8BA;"># 登陆用户名</span>
-      <span style="color: #C1ADE3;">username:</span> xiamo
-      <span style="color: #AFA8BA;"># 登陆密码</span>
-      <span style="color: #C1ADE3;">password:</span> 17906193.
-    <span style="color: #AFA8BA;"># 阿里云相关配置</span>
-    <span style="color: deepskyblue">ali:</span>
-      <span style="color: #AFA8BA;"># accessKeyId，例：LTAI5tQvrYdwG7nAy</span>
-      accessKeyId: 
-      <span style="color: #AFA8BA;"># accessKeySecret，例：54646cmvsF7NPv6BEGVZN</span>
-      accessKeySecret: 
-      <span style="color: #AFA8BA;"># bucket，例：xiamo</span>
-      bucket: 
-      <span style="color: #AFA8BA;"># region，例：oss-cn-shenzhen</span>
-      region: 
-      <span style="color: #AFA8BA;"># oss域名，例：https://alioss.xiamoqwq.com</span>
-      ossHost: 
-</div>
+<img src="https://alioss.xiamoqwq.com/screenshot/QQ%E6%88%AA%E5%9B%BE20220314103817.png">
 
 
 ### 前端传送门
