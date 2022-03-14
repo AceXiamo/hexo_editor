@@ -49,8 +49,8 @@
 这里目前没有实现，大概就是先手动选择图片进行上传，然后补全插画作者信息，稍显麻烦 💦
 
 #### Pixiv插画爬取
-<img src="https://alioss.xiamoqwq.com/screenshot/QQ截图20220314105541.png"/>
-<img src="https://alioss.xiamoqwq.com/screenshot/QQ截图20220314105553.png"/>
+<img src="https://alioss.xiamoqwq.com/screenshot/QQ截图20220314105541.png" />
+<img src="https://alioss.xiamoqwq.com/screenshot/QQ截图20220314105553.png" />
 根据Pixiv插画页Url爬取到插画以及作者信息，然后将插画上传至阿里云OSS，再进行保存
 
 使用该方式保存插画需要
