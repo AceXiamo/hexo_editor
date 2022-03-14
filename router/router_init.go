@@ -7,7 +7,7 @@ import (
 
 func InitRouter(app *iris.Application) {
 	app.Get("/login", sys.Login)
-
+	
 	hexo := app.Party("/hexo")
 	{
 		// 文件列表
@@ -30,5 +30,21 @@ func InitRouter(app *iris.Application) {
 		cover.Get("/byte", sys.RandomImgByte)
 		// 获取所有封面图
 		cover.Get("/all", sys.AllImg)
+	}
+
+	pixiv := app.Party("/pixiv")
+	{
+		// 获取插画作者信息
+		pixiv.Get("/info", sys.PixivInfo)
+		// 获取插画作者信息
+		pixiv.Get("/toByte", sys.GetImageByte)
+		// 分页查询插画
+		pixiv.Get("/list", sys.ImageByPage)
+		// 保存插画
+		pixiv.Post("/save", sys.SaveImage)
+		// 根据id查询插画信息
+		pixiv.Get("/imageInfo", sys.ImageInfo)
+		// 根据id删除插画
+		pixiv.Post("/del", sys.DelImage)
 	}
 }

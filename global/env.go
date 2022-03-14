@@ -8,9 +8,6 @@ import (
 	"hexo_editor/utils"
 )
 
-// 用户
-var user map[string]string
-
 // Conf 用于保存全局配置
 var Conf entity.Config
 
@@ -24,6 +21,8 @@ func InitGlobalConfig() {
 	utils.LoadConfig(&Conf)
 	// 初始化用户
 	utils.InitUser(Conf)
+	// 加载数据库
+	utils.DbInit()
 }
 
 func Result(ctx iris.Context, code int, msg interface{}, data interface{}) {
