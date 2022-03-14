@@ -15,6 +15,7 @@
 
 ### 大概会有的功能
 - 博客编辑 (一些基础功能，暂时已经完成了)
+- 插画收集 (已完成)
 - 表情 (这里有markdown-emoji和表情图)
 - 内容管理 (存放一些静态资源，以及在博客中使用这些静态资源)
 - 发布说说
@@ -31,6 +32,32 @@
 `username`  登陆用户名
 
 `password`  登陆密码
+
+<div style="white-space: pre;background-color: #4A4453;color: black;border-radius: 4px;color: white;padding-bottom: 20px">
+    <span style="color: #AFA8BA;"># API Service</span>
+    <span style="color: deepskyblue">server:</span>
+      <span style="color: #AFA8BA;"># 后端运行端口</span>
+      <span style="color: #C1ADE3;">port:</span> 7070
+      <span style="color: #AFA8BA;"># hexo的根目录（此处用于限制可访问路径，比如说填写：'/data/hexo'，那么就只能访问/编辑该目录下的文件</span>
+      <span style="color: #C1ADE3;">hexo_root:</span> E:/work/hexo-xiamo/xiamo
+      <span style="color: #AFA8BA;"># 登陆用户名</span>
+      <span style="color: #C1ADE3;">username:</span> xiamo
+      <span style="color: #AFA8BA;"># 登陆密码</span>
+      <span style="color: #C1ADE3;">password:</span> 17906193.
+    <span style="color: #AFA8BA;"># 阿里云相关配置</span>
+    <span style="color: deepskyblue">ali:</span>
+      <span style="color: #AFA8BA;"># accessKeyId，例：LTAI5tQvrYdwG7nAy</span>
+      accessKeyId: 
+      <span style="color: #AFA8BA;"># accessKeySecret，例：54646cmvsF7NPv6BEGVZN</span>
+      accessKeySecret: 
+      <span style="color: #AFA8BA;"># bucket，例：xiamo</span>
+      bucket: 
+      <span style="color: #AFA8BA;"># region，例：oss-cn-shenzhen</span>
+      region: 
+      <span style="color: #AFA8BA;"># oss域名，例：https://alioss.xiamoqwq.com</span>
+      ossHost: 
+</div>
+
 
 ### 前端传送门
 🔗 [Click here](https://github.com/xm17906193/hexo_editor_vue)
