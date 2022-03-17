@@ -1,6 +1,6 @@
 # hexo_editor
 <img src="https://xiamo.oss-accelerate.aliyuncs.com/xiamo/WordPress/2021/12/20211220154336504.png" />
-因为编辑Hexo博客的方式实在麻烦，并且后台插件不是很好看，所以决定自己写，于是也就开始了这个项目，顺便在其中学习一下Golang 
+因为编辑Hexo博客的方式实在麻烦，并且后台插件不是很好看，所以决定自己写，于是也就开始了这个项目，顺便在其中学习一下Golang
 
 ### 预览
 测试博客地址： 🔗 [Click here](http://demo.hexo.xiamoqwq.com)
@@ -77,3 +77,7 @@
 
 然后copy目录下index.md再将js代码中的userId替换掉即可💦
 
+### JetBrains
+<img style="height: 80px" src="https://alioss.xiamoqwq.com/icon/jb_beam.png"/>
+
+感谢JetBrains对本项目的支持
