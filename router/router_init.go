@@ -7,6 +7,8 @@ import (
 
 func InitRouter(app *iris.Application) {
 	app.Get("/login", sys.Login)
+
+	app.Get("/saveSKey", sys.SaveSKey)
 	
 	hexo := app.Party("/hexo")
 	{

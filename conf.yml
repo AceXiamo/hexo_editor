@@ -1,0 +1,23 @@
+server:
+  # 后端运行端口
+  port: 7070
+  # hexo的根目录（此处用于限制可访问路径，比如说填写：'/data/hexo'，那么就只能访问/编辑该目录下的文件
+  hexo_root: E:/work/hexo-xiamo/xiamo
+  # 登陆用户名
+  username: xiamo
+  # 登陆密码
+  password: 17906193.
+  # 说说用户标识
+  shuo: default_key_shuo
+# 阿里云相关配置
+ali:
+  # accessKeyId
+  accessKeyId:
+  # accessKeySecret
+  accessKeySecret:
+  # bucket
+  bucket: xiamo
+  # region
+  region: oss-cn-shenzhen
+  # oss域名
+  ossHost:

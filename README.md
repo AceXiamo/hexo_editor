@@ -80,4 +80,4 @@
 ### JetBrains
 <img style="height: 80px" src="https://alioss.xiamoqwq.com/icon/jb_beam.png"/>
 
-感谢JetBrains对本项目的支持
+感谢JetBrains对本项目的支持 👍

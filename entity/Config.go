@@ -11,6 +11,7 @@ type Server struct {
 	HexoRoot string `yaml:"hexo_root"`
 	Username string `yaml:"username"`
 	Password string `yaml:"password"`
+	Shuo string `yaml:"shuo"`
 }
 
 type AliConfig struct {

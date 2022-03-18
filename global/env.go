@@ -11,6 +11,10 @@ import (
 // Conf 用于保存全局配置
 var Conf entity.Config
 
+func ReloadConf()  {
+	utils.LoadConfig(&Conf)
+}
+
 func InitGlobalConfig() {
 	defer log.Info("Config Init Success！")
 	// log样式配置

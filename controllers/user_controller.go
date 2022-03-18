@@ -15,3 +15,17 @@ func Login(ctx iris.Context) {
 	log.Info("[" + ctx.GetHeader("X-Real-Ip") + "] login...")
 	global.Result(ctx, 200, "success", service.Login(user))
 }
+
+type Shuo struct {
+	Key    string `json:"key,omitempty"`
+	OldKey string `json:"old_key,omitempty"`
+}
+
+func SaveSKey(ctx iris.Context)  {
+	defer global.ErrorHandle(ctx)
+	utils.Auth(ctx.GetHeader("Auth"))
+	log.Info("[" + ctx.GetHeader("X-Real-Ip") + "] saveSKey...")
+	var data Shuo
+	ctx.ReadQuery(&data)
+	global.Result(ctx, 200, "success", service.SaveSKey(data.Key, data.OldKey))
+}
