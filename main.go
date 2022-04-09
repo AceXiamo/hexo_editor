@@ -16,5 +16,8 @@ func main() {
 	router.InitRouter(app)
 	// listen port
 	port := ":" + strconv.Itoa(global.Conf.Server.Port)
-	app.Listen(port)
+	err := app.Listen(port)
+	if err != nil {
+		return 
+	}
 }

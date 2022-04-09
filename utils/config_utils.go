@@ -11,7 +11,7 @@ import (
 )
 
 // ConfInit 配置文件初始化
-var ConfInit string = "server:\n  # 后端运行端口\n  port: 7070\n  # hexo的根目录（此处用于限制可访问路径，比如说填写：'/data/hexo'，那么就只能访问/编辑该目录下的文件\n  hexo_root: E:/work/hexo-xiamo/xiamo\n  # 登陆用户名\n  username: xiamo\n  # 登陆密码\n  password: 17906193.\n  # 说说用户标识\n  shuo: default_key_shuo\n# 阿里云相关配置\nali:\n  # accessKeyId\n  accessKeyId: \n  # accessKeySecret\n  accessKeySecret: \n  # bucket\n  bucket: \n  # region\n  region: \n  # oss域名\n  ossHost: https://alioss.xiamoqwq.com\n"
+var ConfInit string = "server:\n  # 后端运行端口\n  port: 7070\n  # hexo的根目录（此处用于限制可访问路径，比如说填写：'/data/hexo'，那么就只能访问/编辑该目录下的文件\n  hexo_root: E:/work/hexo-xiamo/xiamo\n  # 登陆用户名\n  username: xiamo\n  # 登陆密码\n  password: 17906193.\n  # 说说用户标识，请勿修改\n  shuo: default_key_shuo\n# 阿里云相关配置\nali:\n  # accessKeyId\n  accessKeyId: \n  # accessKeySecret\n  accessKeySecret: \n  # bucket\n  bucket: \n  # region\n  region: \n  # oss域名\n  ossHost: https://alioss.xiamoqwq.com\n"
 
 func LoadConfig(conf *entity.Config) []byte {
 	var rootPath, _ = filepath.Abs(path.Dir(os.Args[0]))
