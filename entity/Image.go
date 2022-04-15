@@ -33,4 +33,6 @@ type ImageAuthor struct {
 	PixivCode    string `json:"pixiv_code,omitempty"`
 	PixivHomeUrl string `json:"pixiv_home_url,omitempty"`
 	CreateTime   string `json:"create_time"`
+
+	Num int64 `gorm:"-" json:"num"`
 }

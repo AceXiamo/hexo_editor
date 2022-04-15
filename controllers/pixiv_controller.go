@@ -104,3 +104,12 @@ func DelImage(ctx iris.Context) {
 	utils.Auth(ctx.GetHeader("Auth"))
 	global.Result(ctx, 200, "success", service.DelImage(ctx.URLParam("id")))
 }
+
+// AuthList
+// @Description: 查询所有已保存作者信息，一次性返回不进行分页
+// @param ctx
+func AuthList(ctx iris.Context)  {
+	defer global.ErrorHandle(ctx)
+	utils.Auth(ctx.GetHeader("Auth"))
+	global.Result(ctx, 200, "success", service.AuthList())
+}

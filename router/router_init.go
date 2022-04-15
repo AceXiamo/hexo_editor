@@ -38,7 +38,7 @@ func InitRouter(app *iris.Application) {
 	{
 		// 获取插画作者信息
 		pixiv.Get("/info", sys.PixivInfo)
-		// 获取插画作者信息
+		// 根据P站插画路径取图
 		pixiv.Get("/toByte", sys.GetImageByte)
 		// 分页查询插画
 		pixiv.Get("/list", sys.ImageByPage)
@@ -48,5 +48,7 @@ func InitRouter(app *iris.Application) {
 		pixiv.Get("/imageInfo", sys.ImageInfo)
 		// 根据id删除插画
 		pixiv.Post("/del", sys.DelImage)
+		// 查询所有已保存作者信息，一次性返回不进行分页
+		pixiv.Get("/auth", sys.AuthList)
 	}
 }

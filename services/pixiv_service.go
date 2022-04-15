@@ -4,6 +4,7 @@ import (
 	"hexo_editor/entity"
 	"hexo_editor/pixiv"
 	"hexo_editor/utils"
+	"sort"
 )
 
 // PixivInfo
@@ -48,7 +49,7 @@ func SaveImage(images []entity.Image, detail []entity.ImageDetail, auth entity.I
 		utils.ImageDb.Create(&detail[i])
 	}
 	var total int64 = 0
-	utils.ImageDb.Where("id = ?", detail[0].AuthorId).Count(&total)
+	utils.ImageDb.Model(&entity.ImageAuthor{}).Where("id = ?", detail[0].AuthorId).Count(&total)
 	if total < 1 {
 		utils.ImageDb.Create(&auth)
 	}
@@ -77,4 +78,19 @@ func DelImage(id string) string {
 	detail := new(entity.ImageDetail)
 	utils.ImageDb.Where("image_id = ?", id).Delete(&detail)
 	return "删除成功!"
+}
+
+// AuthList
+// @Description: 查询所有已保存作者信息，一次性返回不进行分页
+// @param ctx
+func AuthList() interface{} {
+	var author []entity.ImageAuthor
+	utils.ImageDb.Find(&author)
+	for i := 0; i < len(author); i++ {
+		utils.ImageDb.Model(&entity.ImageDetail{}).Where("author_id = ?", author[i].Id).Count(&author[i].Num)
+	}
+	sort.Slice(author, func(i, j int) bool {
+		return author[i].Num > author[j].Num
+	})
+	return author
 }
