@@ -32,6 +32,8 @@ func InitRouter(app *iris.Application) {
 		cover.Get("/byte", sys.RandomImgByte)
 		// 获取所有封面图
 		cover.Get("/all", sys.AllImg)
+		// 编辑封面图
+		cover.Post("/edit", sys.EditImg)
 	}
 
 	pixiv := app.Party("/pixiv")

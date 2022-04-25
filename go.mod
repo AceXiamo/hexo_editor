@@ -6,7 +6,7 @@ require (
 	github.com/PuerkitoBio/goquery v1.8.0
 	github.com/kataras/iris/v12 v12.1.8
 	github.com/mattn/go-colorable v0.1.12
-	github.com/sirupsen/logrus v1.8.1
+	github.com/sirupsen/logrus v1.8.2-0.20220112234510-85981c045988
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 	gorm.io/driver/sqlite v1.3.1
 	gorm.io/gorm v1.23.2
