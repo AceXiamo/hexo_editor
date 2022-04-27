@@ -20,13 +20,14 @@
 🔗 [Click here](https://qwq.link)
 
 
-### 大概会有的功能
+### Now
+
+#### 已完成的模块
 - 博客编辑 (一些基础功能，暂时已经完成了)
 - 插画收集 (pixiv插画爬取并上传至阿里云OSS)
-- 表情 (这里有markdown-emoji和表情图)
-- 内容管理 (存放一些静态资源，以及在博客中使用这些静态资源)
+- 封面图管理
 - 发布说说
-- css/js配置 (因为我的博客中用到了大量的css和一部分js，所以可以配置一个全局css/js，或者单独导入部分css/js到某个博客中)
+
 
 ### 关于启动方式
 首次运行项目会产生一个配置文件，补充完整后重新启动，再运行Vue即可
@@ -40,13 +41,9 @@
 
 `password`  登陆密码
 
-<img src="https://alioss.xiamoqwq.com/screenshot/QQ%E6%88%AA%E5%9B%BE20220314103817.png" />
+<img src="https://alioss.xiamoqwq.com/screenshot/QQ%E6%88%AA%E5%9B%BE20220314103817.png"  alt=""/>
 
 ### 关于插画收集
-这里我提供了两种上传方式
-
-#### 手动上传
-这里目前没有实现，大概就是先手动选择图片进行上传，然后补全插画作者信息，稍显麻烦 💦
 
 #### Pixiv插画爬取
 ![输入图片说明](https://alioss.xiamoqwq.com/screenshot/QQ截图20220314105541.png)
