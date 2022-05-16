@@ -1,5 +1,5 @@
 # hexo_editor
-<img src="https://alioss.xiamoqwq.com/screenshot/QQ截图202205010420.png"  alt="login"/>
+<img src="https://alioss.xiamoqwq.com/screenshot/QQ截图202205010420.png" alt=""/>
 因为编辑Hexo博客的方式实在麻烦，并且后台插件不是很好看，所以决定自己写，于是也就开始了这个项目，顺便在其中学习一下Golang
 
 ### 预览
