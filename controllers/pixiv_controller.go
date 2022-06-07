@@ -70,7 +70,7 @@ func GetImageByte(ctx iris.Context) {
 // @param ctx
 func ImageByPage(ctx iris.Context) {
 	defer global.ErrorHandle(ctx)
-	utils.Auth(ctx.GetHeader("Auth"))
+	//utils.Auth(ctx.GetHeader("Auth"))
 	page, _ := strconv.Atoi(ctx.URLParam("page"))
 	size, _ := strconv.Atoi(ctx.URLParam("size"))
 	global.Result(ctx, 200, "success", service.ImageByPage(page, size))
