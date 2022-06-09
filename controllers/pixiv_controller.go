@@ -111,6 +111,6 @@ func DelImage(ctx iris.Context) {
 // @param ctx
 func AuthList(ctx iris.Context)  {
 	defer global.ErrorHandle(ctx)
-	utils.Auth(ctx.GetHeader("Auth"))
+	//utils.Auth(ctx.GetHeader("Auth"))
 	global.Result(ctx, 200, "success", service.AuthList())
 }
