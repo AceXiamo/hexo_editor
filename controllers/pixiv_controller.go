@@ -73,7 +73,8 @@ func ImageByPage(ctx iris.Context) {
 	//utils.Auth(ctx.GetHeader("Auth"))
 	page, _ := strconv.Atoi(ctx.URLParam("page"))
 	size, _ := strconv.Atoi(ctx.URLParam("size"))
-	global.Result(ctx, 200, "success", service.ImageByPage(page, size))
+	nick := ctx.URLParam("nick")
+	global.Result(ctx, 200, "success", service.ImageByPage(page, size, nick))
 }
 
 // SaveImage

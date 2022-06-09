@@ -27,13 +27,19 @@ func GetImageByte(url string) []byte {
 // @Description: 分页查询已保存插画
 // @param page
 // @param size
-func ImageByPage(page, size int) interface{} {
+func ImageByPage(page, size int,nick string) interface{} {
 	limit, offset := utils.ToLimit(page, size)
 	var image []entity.Image
-	utils.ImageDb.Limit(limit).Offset(offset).Order("created_at DESC").Find(&image)
+	sql := utils.ImageDb.Model(&entity.Image{}).Select("images.id", "images.created_at", "images.updated_at", "images.deleted_at", "images.type_id", "images.url", "images.create_time")
+	if len(nick) > 0 {
+		sql.Joins("LEFT JOIN image_details on image_details.image_id = images.id").Joins("LEFT JOIN image_authors ON image_details.author_id = image_authors.id")
+		sql.Where("image_authors.nick = ?", nick)
+	}
+	sql.Limit(limit).Offset(offset).Order("images.created_at DESC")
+	sql.Find(&image)
 	for i := 0; i < len(image); i++ {
-		utils.ImageDb.Where("image_id = ?", image[i].Id).First(&image[i].Detail)
-		utils.ImageDb.Where("id = ?", image[i].Detail.AuthorId).First(&image[i].Auth)
+		utils.ImageDb.Model(&entity.ImageDetail{}).Where("image_id = ?", image[i].Id).First(&image[i].Detail)
+		utils.ImageDb.Model(&entity.ImageAuthor{}).Where("id = ?", image[i].Detail.AuthorId).First(&image[i].Auth)
 	}
 	return image
 }
