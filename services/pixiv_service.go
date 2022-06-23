@@ -8,7 +8,7 @@ import (
 )
 
 // PixivInfo
-// @Description: 根据插画路径获取详情
+// @Description: 根据插画路径获取详情 
 // @param url
 func PixivInfo(url string) map[string]interface{} {
 	return pixiv.GetPixivInfo(url)
