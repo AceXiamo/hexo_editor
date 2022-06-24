@@ -13,6 +13,9 @@
 
 文章根目录路径：/data/hexo/source/_posts/
 
+PS: 因为这边部署在一台国内的腾讯云服务器上，没办法访问外网，所以说Pixiv插画爬取没办法用，
+    OSS之类的配置我也没有加，封面图那边也是没办法操作的 💤
+
 ### 前端传送门
 🔗 [Click here](https://github.com/xm17906193/hexo_editor_vue)
 
