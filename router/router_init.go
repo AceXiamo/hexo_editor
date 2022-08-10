@@ -9,7 +9,7 @@ func InitRouter(app *iris.Application) {
 	app.Get("/login", sys.Login)
 
 	app.Get("/saveSKey", sys.SaveSKey)
-	
+
 	hexo := app.Party("/hexo")
 	{
 		// 文件列表
@@ -52,5 +52,17 @@ func InitRouter(app *iris.Application) {
 		pixiv.Post("/del", sys.DelImage)
 		// 查询所有已保存作者信息，一次性返回不进行分页
 		pixiv.Get("/auth", sys.AuthList)
+	}
+
+	source := app.Party("/source")
+	{
+		// 分页查询
+		source.Get("/list", sys.SourceByPage)
+		// 保存
+		source.Post("/save", sys.SaveSource)
+		// 根据id删除
+		source.Post("/del", sys.DelSource)
+		// 修改
+		source.Post("/update", sys.UpdateSource)
 	}
 }

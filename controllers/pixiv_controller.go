@@ -16,9 +16,9 @@ type ImgJson struct {
 }
 
 type ImgJson1 struct {
-	Image       interface{}       `json:"image,omitempty"`
+	Image       interface{} `json:"image,omitempty"`
 	ImageDetail interface{} `json:"image_detail,omitempty"`
-	ImageAuthor ImageAuthor   `json:"image_author"`
+	ImageAuthor ImageAuthor `json:"image_author"`
 }
 
 type Image struct {
@@ -62,7 +62,10 @@ func GetImageByte(ctx iris.Context) {
 	defer global.ErrorHandle(ctx)
 	//utils.Auth(ctx.GetHeader("Auth"))
 	// 写入图片 字节数组
-	ctx.Write(service.GetImageByte(ctx.URLParam("url")))
+	_, err := ctx.Write(service.GetImageByte(ctx.URLParam("url")))
+	if err != nil {
+		return
+	}
 }
 
 // ImageByPage
@@ -84,7 +87,10 @@ func SaveImage(ctx iris.Context) {
 	defer global.ErrorHandle(ctx)
 	utils.Auth(ctx.GetHeader("Auth"))
 	var json ImgJson
-	ctx.ReadJSON(&json)
+	err := ctx.ReadJSON(&json)
+	if err != nil {
+		return
+	}
 	global.Result(ctx, 200, "success", service.SaveImage(json.Image, json.ImageDetail, json.ImageAuthor))
 }
 
@@ -109,7 +115,7 @@ func DelImage(ctx iris.Context) {
 // AuthList
 // @Description: 查询所有已保存作者信息，一次性返回不进行分页
 // @param ctx
-func AuthList(ctx iris.Context)  {
+func AuthList(ctx iris.Context) {
 	defer global.ErrorHandle(ctx)
 	//utils.Auth(ctx.GetHeader("Auth"))
 	global.Result(ctx, 200, "success", service.AuthList())
