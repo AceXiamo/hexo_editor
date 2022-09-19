@@ -120,3 +120,11 @@ func AuthList(ctx iris.Context) {
 	//utils.Auth(ctx.GetHeader("Auth"))
 	global.Result(ctx, 200, "success", service.AuthList())
 }
+
+// PixivNum
+//  @Description: 获取收集插画的数量
+//  @param ctx
+func PixivNum(ctx iris.Context) {
+	defer global.ErrorHandle(ctx)
+	global.Result(ctx, 200, "success", service.PixivNum())
+}

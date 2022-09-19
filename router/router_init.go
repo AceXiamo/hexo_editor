@@ -52,6 +52,8 @@ func InitRouter(app *iris.Application) {
 		pixiv.Post("/del", sys.DelImage)
 		// 查询所有已保存作者信息，一次性返回不进行分页
 		pixiv.Get("/auth", sys.AuthList)
+		// 获取收集插画的数量
+		pixiv.Get("/num", sys.PixivNum)
 	}
 
 	source := app.Party("/source")

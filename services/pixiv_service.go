@@ -8,7 +8,7 @@ import (
 )
 
 // PixivInfo
-// @Description: 根据插画路径获取详情 
+// @Description: 根据插画路径获取详情
 // @param url
 func PixivInfo(url string) map[string]interface{} {
 	return pixiv.GetPixivInfo(url)
@@ -27,7 +27,7 @@ func GetImageByte(url string) []byte {
 // @Description: 分页查询已保存插画
 // @param page
 // @param size
-func ImageByPage(page, size int,nick string) interface{} {
+func ImageByPage(page, size int, nick string) interface{} {
 	limit, offset := utils.ToLimit(page, size)
 	var image []entity.Image
 	sql := utils.ImageDb.Model(&entity.Image{}).Select("images.id", "images.created_at", "images.updated_at", "images.deleted_at", "images.type_id", "images.url", "images.create_time")
@@ -99,4 +99,12 @@ func AuthList() interface{} {
 		return author[i].Num > author[j].Num
 	})
 	return author
+}
+
+// PixivNum
+//  @Description:
+func PixivNum() int64 {
+	var allNum int64
+	utils.ImageDb.Model(&entity.Image{}).Count(&allNum)
+	return allNum
 }
