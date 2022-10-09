@@ -11,6 +11,7 @@ type Sources struct {
 	SourceUrl string `json:"source_url,omitempty"`
 	/* 类型（image: 图片， video: 视频，voice: 音频）*/
 	SourceType string  `json:"source_type,omitempty"`
+	SourceName string  `json:"source_name,omitempty"`
 	Remark     *string `json:"remark,omitempty"`
 	CreateTime string  `json:"create_time"`
 }

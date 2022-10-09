@@ -6,12 +6,13 @@ import (
 	log "github.com/sirupsen/logrus"
 	"hexo_editor/entity"
 	"hexo_editor/utils"
+	"time"
 )
 
 // Conf 用于保存全局配置
 var Conf entity.Config
 
-func ReloadConf()  {
+func ReloadConf() {
 	utils.LoadConfig(&Conf)
 }
 
@@ -38,7 +39,7 @@ func Result(ctx iris.Context, code int, msg interface{}, data interface{}) {
 		res["code"] = 403
 	}
 	if code == 500 {
-		log.Error("failed by ["+ctx.GetHeader("X-Real-Ip")+"]: ", msg)
+		log.Error("failed by ["+ctx.GetHeader("X-Real-Ip")+"] at [", time.Now().Format("2006-01-02 15:04:05"), "]: ", msg)
 	} else if code == 200 {
 		res["data"] = data
 	}

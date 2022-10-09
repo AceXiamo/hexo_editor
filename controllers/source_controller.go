@@ -9,8 +9,9 @@ import (
 )
 
 // SourceByPage
-//  @Description:
-//  @param ctx
+//
+//	@Description:
+//	@param ctx
 func SourceByPage(ctx iris.Context) {
 	defer global.ErrorHandle(ctx)
 	//utils.Auth(ctx.GetHeader("Auth"))
@@ -21,22 +22,25 @@ func SourceByPage(ctx iris.Context) {
 }
 
 // SaveSource
-//  @Description:
-//  @param ctx
+//
+//	@Description:
+//	@param ctx
 func SaveSource(ctx iris.Context) {
 	defer global.ErrorHandle(ctx)
 	//utils.Auth(ctx.GetHeader("Auth"))
 	var json entity.Sources
 	err := ctx.ReadJSON(&json)
 	if err != nil {
+		global.Result(ctx, 500, "no data", nil)
 		return
 	}
 	global.Result(ctx, 200, "success", service.SaveSource(&json))
 }
 
 // DelSource
-//  @Description:
-//  @param ctx
+//
+//	@Description:
+//	@param ctx
 func DelSource(ctx iris.Context) {
 	defer global.ErrorHandle(ctx)
 	//utils.Auth(ctx.GetHeader("Auth"))
