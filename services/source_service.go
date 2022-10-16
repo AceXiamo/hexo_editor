@@ -17,7 +17,7 @@ func SourceByPage(page, size int) interface{} {
 	limit, offset := utils.ToLimit(page, size)
 	var image []entity.Sources
 	sql := utils.ImageDb.Model(&entity.Sources{})
-	sql.Select("sources.id", "sources.source_name", "sources.source_url", "sources.source_type", "sources.remark", "sources.create_time")
+	//sql.Select("sources.id", "sources.source_name", "sources.source_url", "sources.source_type", "sources.remark", "sources.create_time")
 	sql.Limit(limit).Offset(offset).Order("sources.create_time DESC")
 	sql.Find(&image)
 	return image
