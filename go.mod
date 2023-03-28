@@ -6,6 +6,7 @@ require (
 	github.com/PuerkitoBio/goquery v1.8.0
 	github.com/kataras/iris/v12 v12.1.8
 	github.com/mattn/go-colorable v0.1.12
+	github.com/satori/go.uuid v1.2.0
 	github.com/sirupsen/logrus v1.8.2-0.20220112234510-85981c045988
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 	gorm.io/driver/sqlite v1.3.1
@@ -45,7 +46,6 @@ require (
 	github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742 // indirect
 	github.com/moul/http2curl v1.0.0 // indirect
 	github.com/ryanuber/columnize v2.1.0+incompatible // indirect
-	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/schollz/closestmatch v2.1.0+incompatible // indirect
 	github.com/sergi/go-diff v1.2.0 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
