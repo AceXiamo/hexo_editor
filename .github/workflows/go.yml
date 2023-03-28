@@ -30,6 +30,5 @@ jobs:
     - uses: GoogleCloudPlatform/release-please-action@v3
       id: release
       with:
-        token: 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
         release-type: node
         package-name: hexo_editor
